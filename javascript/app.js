@@ -1,5 +1,12 @@
 // Rover Object Goes Here
 // ======================
+var marsRover = {
+  direction: "N",
+  x: 0,
+  y: 0,
+  travelLog: [0, 0]
+};
+
 
 var map = [
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -76,13 +83,6 @@ function moveBackward(rover) {
 }
 
 function commands(moves) {
-  var marsRover = {
-    direction: "N",
-    x: 0,
-    y: 0,
-    travelLog: [0, 0]
-  };
-
   for (var i = 0; i < moves.length; i++) {
     if (moves[i] === "f") {
       console.log("moving forward");
@@ -100,7 +100,6 @@ function commands(moves) {
 
     if (map[marsRover.y][marsRover.x] === "X") {
       console.log("obstacle was found");
-      break;
     }
   }
 }
